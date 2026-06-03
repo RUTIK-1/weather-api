@@ -79,11 +79,20 @@ async function checkWeather(city){
 
 // jyare be search button upar click thy tyre j weather show thy
 searchBtn.addEventListener('click', ()=>{
-    checkWeather(inputBox.value);
+    const city = inputBox.value;
+
+    localStorage.setItem('lastCity', city);
+
+    checkWeather(city);
 });
 
 inputBox.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
-        checkWeather(inputBox.value);
+
+        const city = inputBox.value;
+
+        localStorage.setItem('lastCity', city);
+
+        checkWeather(city);
     }
 });
