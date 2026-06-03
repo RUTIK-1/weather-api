@@ -39,19 +39,19 @@ async function checkWeather(city){
 
     switch(weather_data.weather[0].main){
         case 'Clouds':
-            weather_img.src = "/pics/cloud.png";
+            weather_img.src = "pics/cloud.png";
             break;
         case 'Clear':
-            weather_img.src = "/pics/clear.png";
+            weather_img.src = "pics/clear.png";
             break;
         case 'Rain':
             weather_img.src = "pics/rain.png";
             break;
         case 'Mist':
-            weather_img.src = "/pics/mist.png";
+            weather_img.src = "pics/mist.png";
             break;
         case 'Snow':
-            weather_img.src = "/pics/snow.png";
+            weather_img.src = "pics/snow.png";
             break;
 
     }
@@ -62,4 +62,10 @@ async function checkWeather(city){
 // jyare be search button upar click thy tyre j weather show thy
 searchBtn.addEventListener('click', ()=>{
     checkWeather(inputBox.value);
+});
+
+inputBox.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        checkWeather(inputBox.value);
+    }
 });
