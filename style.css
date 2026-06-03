@@ -14,6 +14,7 @@ body{
     /* EYL & SEARCH BU.. "CENTER" */
     align-items: center;
     background-color: #000;
+    background: linear-gradient(135deg,#141E30,#243B55);
 }
 
 .container{
@@ -152,4 +153,133 @@ body{
     background-color: rgba(0, 0, 0, 0);
     margin: -36% 20% 83px -32%;
     padding: 0 0%;
+}
+
+.bg-scene{
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+
+
+.cloud{
+    color: rgba(255,255,255,.12);
+}
+
+.cloud1{
+    position: absolute;
+    top: 120px;
+    left: 100px;
+    font-size: 90px;
+}
+
+.cloud2{
+    position: absolute;
+    bottom: 120px;
+    right: 180px;
+    font-size: 120px;
+}
+
+.rain-cloud{
+    position: absolute;
+    bottom: 180px;
+    left: 150px;
+    font-size: 110px;
+    color: rgba(255,255,255,.10);
+}
+
+.lightning{
+    position: absolute;
+    top: 70px;
+    right: 740px;
+    font-size: 80px;
+
+    color: #ffd700;
+
+    text-shadow:
+        0 0 10px #ffd700,
+        0 0 20px #ffd700,
+        0 0 40px #ffea00,
+        0 0 60px #ffea00;
+
+    animation: flash 4s infinite;
+
+}
+
+/* Make clouds move */
+.cloud1{
+    animation: float1 18s linear infinite;
+}
+
+.cloud2{
+    animation: float2 22s linear infinite;
+}
+
+@keyframes float1{
+    from{
+        transform: translateX(-50px);
+    }
+    to{
+        transform: translateX(100px);
+    }
+}
+
+@keyframes float2{
+    from{
+        transform: translateX(100px);
+    }
+    to{
+        transform: translateX(-50px);
+    }
+}
+
+/* Make lightning flash */
+@keyframes flash{
+    0%,90%,100%{
+        opacity: .2;
+    }
+
+    92%,94%{
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+
+.sun{
+    position: absolute;
+    top: 70px;
+    right: 120px;
+
+    width: 120px;
+    height: 120px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        #fff176 0%,
+        #ffd54f 40%,
+        #ffb300 100%
+    );
+
+    box-shadow:
+        0 0 30px #ffd54f,
+        0 0 60px #ffca28,
+        0 0 100px rgba(255,193,7,.6);
+}
+.sun{
+    animation: glow 4s ease-in-out infinite;
+}
+
+@keyframes glow{
+    0%,100%{
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(1.05);
+    }
 }
