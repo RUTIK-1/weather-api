@@ -40,18 +40,36 @@ async function checkWeather(city){
     switch(weather_data.weather[0].main){
         case 'Clouds':
             weather_img.src = "pics/cloud.png";
+            
+         document.body.style.background =
+        'linear-gradient(135deg,#bdc3c7,#2c3e50)';
             break;
         case 'Clear':
             weather_img.src = "pics/clear.png";
+        
+        document.body.style.background =
+        'linear-gradient(135deg,#f6d365,#fda085)';
             break;
+
         case 'Rain':
             weather_img.src = "pics/rain.png";
+        
+        document.body.style.background =
+        'linear-gradient(135deg,#4b79a1,#283e51)';
             break;
+
         case 'Mist':
             weather_img.src = "pics/mist.png";
+                    
+        document.body.style.background =
+        'linear-gradient(135deg,#757F9A,#D7DDE8)';
             break;
+
         case 'Snow':
             weather_img.src = "pics/snow.png";
+        
+        document.body.style.background =
+        'linear-gradient(135deg,#e6dada,#274046)';
             break;
 
     }
